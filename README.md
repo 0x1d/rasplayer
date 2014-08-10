@@ -1,5 +1,4 @@
-#Info
-if you want to enable mongoDB / mongoose, just add the dependencie in package.json:  
-"mongoose": "3.5.8"  
-and set appConfig.db.active to true.  
-npm update and you're ready to go :)
+# Rasplayer
+
+## Add mount
+sudo mount -t cifs //192.168.2.1/Music /mnt/smbdisk -o user=admin,domain=WORKGROUP
