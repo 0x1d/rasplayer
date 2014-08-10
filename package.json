@@ -1,0 +1,7 @@
+{
+    "name":"skeleton",
+    "version":"0.3.1",
+    "dependencies":{
+        "slimple": "0.5.1"
+    }
+}

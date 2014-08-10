@@ -1,0 +1,464 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"render",
+				"renderLocal"
+			],
+			[
+				"play",
+				"playerService"
+			],
+			[
+				"current",
+				"currentTrack"
+			],
+			[
+				"tr",
+				"trackId"
+			],
+			[
+				"curr",
+				"currentTrack"
+			],
+			[
+				"cu",
+				"currentPlaylist"
+			],
+			[
+				"cur",
+				"currentStream"
+			],
+			[
+				"onItem",
+				"onItemClick"
+			],
+			[
+				"player",
+				"playerService"
+			],
+			[
+				"curre",
+				"currentPlaylist"
+			],
+			[
+				"on",
+				"onSwipeLeft"
+			],
+			[
+				"get",
+				"getJSON"
+			],
+			[
+				"is",
+				"isFolder"
+			],
+			[
+				"s",
+				"speaker"
+			],
+			[
+				"Ras",
+				"Rasplayer"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "content/js/rsp/cmp/library/library.tpl",
+			"settings":
+			{
+				"buffer_size": 529,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/rsp/cmp/library/LibraryView.js",
+			"settings":
+			{
+				"buffer_size": 301,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/sui/sui.js",
+			"settings":
+			{
+				"buffer_size": 180,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/sui/renderLocal.js",
+			"settings":
+			{
+				"buffer_size": 368,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/LibraryController.js",
+		"/R/workspace/node/rasplayer/rsp/rasplayer.js",
+		"/R/files/ftp.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/PlayerController.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/PlaylistController.js",
+		"/R/workspace/node/rasplayer/services/rsp/player.js",
+		"/R/workspace/node/rasplayer/app.js",
+		"/R/workspace/node/rasplayer/content/index.html",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/Playlist.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/PlayerService.js",
+		"/R/workspace/node/rasplayer/content/templates/library.html",
+		"/R/workspace/node/rasplayer/content/templates/playlist.html",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/PlaylistView.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/Control.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/config.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/ControlView.js",
+		"/R/workspace/node/rasplayer/content/templates/control.html",
+		"/R/workspace/node/rasplayer/services/rsp/resume.js",
+		"/R/workspace/node/rasplayer/services/rsp/back.js",
+		"/R/workspace/node/rasplayer/services/rsp/next.js",
+		"/R/workspace/node/rasplayer/content/js/sui/swipe.js",
+		"/R/workspace/node/rasplayer/content/js/sui/sui.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/App.js",
+		"/R/workspace/node/rasplayer/services/rsp/playlist.js",
+		"/R/workspace/node/rasplayer/services/rsp/queue.js",
+		"/R/workspace/node/rasplayer/services/rsp/play.js",
+		"/R/workspace/node/rasplayer/content/css/style.css",
+		"/R/workspace/node/rasplayer/content/js/rsp/Config.js",
+		"/R/workspace/node/rasplayer/services/echo/echo.js",
+		"/R/workspace/node/rasplayer/services/fs/list.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/FileService.js",
+		"/R/workspace/node/rasplayer/content/js/main.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/Library.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/LibraryView.js",
+		"/R/workspace/node/rasplayer/config/app.js",
+		"/R/workspace/node/rasplayer/config/log.js",
+		"/R/workspace/node/rasplayer/node_modules/slimple/log/logger.js",
+		"/R/workspace/node/soundboard/ui/js/soundboard/App.js",
+		"/R/workspace/node/rasplayer/content/js/sui/mediator.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/LibraryController",
+		"/R/workspace/node/rasplayer/content/stuff.html",
+		"/R/workspace/node/rasplayer/content/js/rsp/view/PlayerControl.js",
+		"/R/workspace/node/rasplayer/services/rsp/stop.js",
+		"/R/workspace/node/slimple/skeleton/events/echo.js",
+		"/R/workspace/node/rasplayer/events/echo.js",
+		"/R/workspace/node/slimple/addendum/services/echo/echo.js",
+		"/R/workspace/node/rasplayer/services/rsp/pause.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/view/Playlist.js",
+		"/R/workspace/node/rasplayer/content/js/sui/render.js",
+		"/R/workspace/node/slimple/addendum-test/app.js",
+		"/R/workspace/node/slimple/addendum-test/config/app.js",
+		"/R/workspace/node/slimple/addendum-test/content/templates/list.ejs",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/Playlist.js",
+		"/R/workspace/node/soundboard/ui/js/soundboard/views/MenuView.js",
+		"/R/workspace/node/soundboard/ui/js/soundboard/views/FileView.js",
+		"/R/workspace/node/soundboard/ui/js/soundboard/views/BoardView.js",
+		"/R/workspace/node/soundboard/ui/js/soundboard/controllers/MenuController.js",
+		"/R/workspace/node/soundboard/ui/js/main.js",
+		"/R/workspace/node/soundboard/ui/js/require.js",
+		"/R/workspace/node/soundboard/ui/templates/board.html",
+		"/R/workspace/node/soundboard/README",
+		"/R/workspace/node/rasplayer/content/js/vendor/jquery.js",
+		"/R/files/play.js",
+		"/R/files/list.js",
+		"/R/workspace/node/rasplayer/rasplayer/rasplayer.js",
+		"/R/workspace/node/rasplayer/services/rasplayer/play.js",
+		"/R/workspace/node/rasplayer/services/play/PlayService.js",
+		"/R/workspace/node/rasplayer/services/play/echo.js",
+		"/R/workspace/node/rmk/karotz/api.js",
+		"/R/workspace/node/extension loader.js",
+		"/R/files/smb.js",
+		"/C/Users/mentex/Downloads/AdminLTE-master/AdminLTE-master/index.html",
+		"/C/Users/mentex/Desktop/sc.html",
+		"/C/Users/mentex/Desktop/test.html",
+		"/R/files/node_modules/jsftp/lib/jsftp.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"onRerenderPlaylist",
+			"renderControl",
+			"();\n",
+			"rsp.player.playlist.rerender",
+			"rsp.player.control.rerender",
+			"onRerenderControl",
+			"renderPlaylist",
+			"renderControl",
+			"cons",
+			"consl",
+			");\n",
+			"trackId",
+			"tags",
+			"        \n",
+			"push",
+			"trackfin",
+			"this.track",
+			"play",
+			" \n",
+			");\n",
+			"  \n",
+			"callback",
+			"			\n",
+			"*/\n",
+			"COMMANDS",
+			"on"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "content/js/rsp/cmp/library/library.tpl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								529
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "content/js/rsp/cmp/library/LibraryView.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								301,
+								301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "content/js/sui/sui.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								154,
+								154
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "content/js/sui/renderLocal.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 368,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								308,
+								308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 647.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 198.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
