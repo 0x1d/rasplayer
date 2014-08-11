@@ -12,7 +12,7 @@ define([
 			library.update(href);
 		} else {
 			playerService.play(href, playlist, function(id3tag){
-				mediator.trigger('rsp.player.track.play', id3tag);
+				//mediator.trigger('rsp.player.track.play', id3tag);
 				renderControl(id3tag);
 				onRerender();
 				//$('.off-canvas-wrap').addClass('move-left');
@@ -24,7 +24,7 @@ define([
 	var renderControl = function(id3tag){
 		view.render(id3tag, function(){
 			//bindEvents();
-			//mediator.trigger('rsp.player.playlist.rerender');
+			mediator.trigger('rsp.player.playlist.rerender');
 		});
 	};
 

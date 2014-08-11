@@ -18,7 +18,7 @@ define([
 	};
 
 	var onPlayTrack = function(){
-		mediator.on('rsp.player.track.play', function(tag){
+		mediator.on('rsp.player.track.play', function(){
 			renderPlaylist();
 		});
 	};
@@ -52,7 +52,7 @@ define([
 
 	var onTogglePlaylist = function(){
 		$('.right-off-canvas-toggle').on('click', function(){
-			//renderPlaylist();
+			renderPlaylist();
 			mediator.trigger('rsp.player.control.rerender');
 		});
 	};
