@@ -1,4 +1,4 @@
-define(function() {
+define(['jquery'], function($) {
 
 	var events = [];
 
@@ -15,9 +15,49 @@ define(function() {
 		}
 	};
 
+	var applyModel = function(model){
+		
+		// bind delegates
+		for(var key in model.delegate){
+			var component = model.delegate[key];
+			(function(component){
+				for(var eventName in component){
+					var event = component[eventName];
+					(function(event){
+						for(var bind in event){
+							(function(key, eventName, bind){
+								$(key).on(eventName, bind, function(){
+									trigger(event[bind], this);
+								});
+							})(key, eventName, bind);
+						}
+					})(event);
+				}
+			})(component);
+		}
+
+		// bind events
+		for(var triggerEvent in model.events){
+			var onEvent = model.events[triggerEvent];
+			(function(triggerEvent, handler, triggers){
+				on(triggerEvent, function(triggerData) { 
+					return handler.call({
+						trigger : function(data) {
+							for(var triggerKey in triggers){
+								trigger(triggers[triggerKey], data);
+							}
+						}
+					}, triggerData); 
+				});
+			})(triggerEvent, onEvent.handler, onEvent.trigger);
+		}
+
+	};
+
 	return {
 		on: on,
-		trigger: trigger
+		trigger: trigger,
+		applyModel : applyModel
 	};
 
 });

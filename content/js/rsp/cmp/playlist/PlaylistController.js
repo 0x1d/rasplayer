@@ -23,12 +23,12 @@ define([
 		});
 	};
 
-	var onTrackClick = function(){
+	/*var onTrackClick = function(){
 		$('#rsp-playlist').on('click', 'a', function(event){
 			event.preventDefault();
 			mediator.trigger('rsp.playlist.item.click',this);
 		});
-	};
+	};*/
 
 	var onSwipeLeft = function(){
 		$(document).on('swl', function(){
@@ -44,10 +44,10 @@ define([
 		});
 	};
 
-	var onItemQueue = function(){
-		mediator.on('rsp.library.item.queue', function(item){
-			playerService.queue(item.getAttribute('data-href'), function(){});
-		});
+	var queueItem = function(item){
+		//mediator.on('rsp.library.item.queue', function(item){
+			playerService.queue(item.getAttribute('data-href'), this.trigger);
+		//});
 	};
 
 	var onTogglePlaylist = function(){
@@ -59,10 +59,10 @@ define([
 
 	var bindEvents = function(){
 		onPlayTrack();
-		onTrackClick();
+		//onTrackClick();
 		onSwipeRight();
 		onSwipeLeft();
-		onItemQueue();
+		//onItemQueue();
 		onTogglePlaylist();
 		onRerenderPlaylist();
 	};
@@ -71,6 +71,8 @@ define([
 		bindEvents();
 	};
 	return {
-		run : run
+		run : run,
+		renderPlaylist : renderPlaylist,
+		queueItem : queueItem
 	};
 });

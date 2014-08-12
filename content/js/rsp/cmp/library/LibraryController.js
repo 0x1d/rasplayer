@@ -8,7 +8,7 @@ define([
 		fs.list(path, function(folder){
 			folder.parent = path;
 			view.render(folder, function(){
-				mediator.trigger('rsp.rerender');
+				mediator.trigger('rsp.resize');
 			});
 		});
 	};
@@ -21,10 +21,10 @@ define([
 	};
 
 	var onItemQueue = function(){
-		$('#rsp-library').on('click', '.rsp-item-queue', function(event){
+		/*$('#rsp-library').on('click', '.rsp-item-queue', function(event){
 			event.preventDefault();
 			mediator.trigger('rsp.library.item.queue', this);
-		});
+		});*/
 	}
 
 	var bindEvents = function(){

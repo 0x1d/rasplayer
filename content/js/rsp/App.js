@@ -1,10 +1,12 @@
 define([
 	'foundation',
+	'sui/mediator',
 	'sui/sui',
 	'rsp/cmp/player/Control',
 	'rsp/cmp/playlist/Playlist',
-	'rsp/cmp/library/Library'
-], function($, sui, Control, Playlist, Library) {
+	'rsp/cmp/library/Library',
+	'rsp/EventModel'
+], function($, mediator, sui, Control, Playlist, Library, eventModel) {
 
 	var Rasplayer = function(){
 
@@ -13,6 +15,9 @@ define([
 			Control.run();
 			Playlist.run();
 			Library.run();
+
+			mediator.applyModel(eventModel);
+
 			$(document).foundation();
 			$('body').show();
 		});
