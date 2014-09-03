@@ -1,5 +1,8 @@
 define(function() {
 	var config = {
+		music : {
+			path: '/mnt/smbdisk'
+		},
 		service: {
 			play: '/rsp/play',
 			pause: '/rsp/pause/',
