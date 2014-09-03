@@ -14,10 +14,10 @@ define([
 	};
 
 	var onItemClick = function(){
-		$('#rsp-library').on('click', 'a', function(event){
+		/*$('#rsp-library').on('click', 'a', function(event){
 			event.preventDefault();
 			mediator.trigger('rsp.library.item.click', this);
-		});
+		});*/
 	};
 
 	var onItemQueue = function(){

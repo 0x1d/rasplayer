@@ -7,19 +7,15 @@ define([
 ], function($, mediator, view, library, playerService) {
 
 	var playTrack = function(item, playlist, callback){
+		event.preventDefault();
 		var href = playlist ? '/'+item.getAttribute('data-trackid') : item.getAttribute('href');
 		if(item.getAttribute('data-isfolder') === 'true'){
 			library.update(href);
 		} else {
 			playerService.play(href, playlist, function(id3tag){
-				//mediator.trigger('rsp.player.track.play', id3tag);
-				//renderControl(id3tag);
 				callback.trigger(id3tag);
-				//onRerender();
-				//$('.off-canvas-wrap').addClass('move-left');
 			});
 		}
-		window.scrollTo(0,0);
 	};
 
 	var playlistItemPlay = function(item){
@@ -31,34 +27,17 @@ define([
 		view.render(id3tag);
 	};
 
-	var onRerenderControl = function(id3tag){
-		mediator.on('rsp.player.control.rerender', function(){
-			playerService.currentTrack(function(tag){
-				renderControl(tag);
-			});
+	var refreshControl = function(id3tag){
+		playerService.currentTrack(function(tag){
+			renderControl(tag);
 		});
 	};
 
 	var resize = function(){
-		//mediator.on('rsp.rerender', function(){
-			var rightHeight = $('#rsp-right').height();
-			var libraryHeight = $('#rsp-library').height();
-			var contentHeight = rightHeight > libraryHeight ? rightHeight : libraryHeight;
-			$('.main-section').css("height", contentHeight);
-			window.scrollTo(0,0);
-		//});
-	};
-
-	var onPlaylistItemClick = function(){
-		/*mediator.on('rsp.playlist.item.click', function(item){
-			playTrack(item, true);
-		});*/
-	};
-
-	var onLibraryItemClick = function(){
-		mediator.on('rsp.library.item.click', function(item){
-			playTrack(item);
-		});
+		var rightHeight = $('#rsp-right').height();
+		var libraryHeight = $('#rsp-library').height();
+		var contentHeight = rightHeight > libraryHeight ? rightHeight : libraryHeight;
+		$('.main-section').css("height", contentHeight);
 	};
 
 	var playNext = function(){
@@ -75,15 +54,13 @@ define([
 	};
 
 	var togglePlay = function(btn){
-		//$('#rsp-player-control').on('click', '.rsp-control.play, .rsp-control.pause', function(){
-			var btn = $(btn);
-			var state = togglePlayButton(btn);
-			if(state === 'play'){
-				playerService.pause();
-			} else {
-				playerService.resume();
-			}
-		//});
+		var btn = $(btn);
+		var state = togglePlayButton(btn);
+		if(state === 'play'){
+			playerService.pause();
+		} else {
+			playerService.resume();
+		}
 	};
 
 	var togglePlayButton = function(btn){
@@ -98,15 +75,7 @@ define([
 		}
 	};
 
-	var bindEvents = function(){
-		onLibraryItemClick();
-		onPlaylistItemClick();
-		//onRerender();
-		onRerenderControl();
-	};
-
 	var run = function(){
-		bindEvents();
 	};
 
 	return {
@@ -118,6 +87,7 @@ define([
 		renderControl : renderControl,
 		playTrack : playTrack,
 		playlistItemPlay : playlistItemPlay,
-		resize : resize
+		resize : resize,
+		refreshControl : refreshControl
 	};
 });

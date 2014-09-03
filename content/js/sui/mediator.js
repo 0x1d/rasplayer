@@ -27,7 +27,18 @@ define(['jquery'], function($) {
 						for(var bind in event){
 							(function(key, eventName, bind){
 								$(key).on(eventName, bind, function(){
-									trigger(event[bind], this);
+									event[bind].handler.call({
+										trigger: function(data){
+											var triggers = typeof(event[bind].trigger) == "function" ? event[bind].trigger() : event[bind].trigger;
+											for(var tk in triggers){
+												if(triggers[tk].handler){
+													triggers[tk].handler(data);
+												} else {
+													triggers[tk](data);
+												}
+											}
+										}
+									}, this);
 								});
 							})(key, eventName, bind);
 						}
@@ -37,6 +48,7 @@ define(['jquery'], function($) {
 		}
 
 		// bind events
+		/*
 		for(var triggerEvent in model.events){
 			var onEvent = model.events[triggerEvent];
 			(function(triggerEvent, handler, triggers){
@@ -50,7 +62,7 @@ define(['jquery'], function($) {
 					}, triggerData); 
 				});
 			})(triggerEvent, onEvent.handler, onEvent.trigger);
-		}
+		}*/
 
 	};
 

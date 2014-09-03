@@ -4,20 +4,28 @@
 		"selected_items":
 		[
 			[
+				"trigger",
+				"triggerEvent"
+			],
+			[
+				"on",
+				"onEvent"
+			],
+			[
+				"render",
+				"renderPlaylist"
+			],
+			[
+				"play",
+				"playNext"
+			],
+			[
 				"res",
 				"resetCurrentPlaylist"
 			],
 			[
 				"get",
 				"getCurrentTrackTag"
-			],
-			[
-				"render",
-				"renderLocal"
-			],
-			[
-				"play",
-				"playerService"
 			],
 			[
 				"current",
@@ -52,10 +60,6 @@
 				"currentPlaylist"
 			],
 			[
-				"on",
-				"onSwipeLeft"
-			],
-			[
 				"is",
 				"isFolder"
 			],
@@ -72,42 +76,10 @@
 	"buffers":
 	[
 		{
-			"file": "content/js/rsp/cmp/library/library.tpl",
+			"file": "content/js/rsp/EventModel2.js",
 			"settings":
 			{
-				"buffer_size": 529,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "content/js/rsp/cmp/library/LibraryView.js",
-			"settings":
-			{
-				"buffer_size": 279,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "content/js/rsp/cmp/player/ControlView.js",
-			"settings":
-			{
-				"buffer_size": 281,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "content/js/rsp/cmp/playlist/PlaylistView.js",
-			"settings":
-			{
-				"buffer_size": 278,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "content/index.html",
-			"settings":
-			{
-				"buffer_size": 1729,
+				"buffer_size": 1302,
 				"line_ending": "Windows"
 			}
 		},
@@ -115,81 +87,23 @@
 			"file": "content/js/rsp/cmp/playlist/PlaylistController.js",
 			"settings":
 			{
-				"buffer_size": 1682,
+				"buffer_size": 1756,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "rsp/rasplayer.js",
-			"settings":
-			{
-				"buffer_size": 3984,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "node_modules/slimple/core/server.js",
-			"settings":
-			{
-				"buffer_size": 1378,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "content/js/rsp/cmp/player/PlayerController.js",
 			"settings":
 			{
-				"buffer_size": 2873,
+				"buffer_size": 2838,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "content/js/rsp/EventModel.js",
+			"file": "content/js/rsp/cmp/library/LibraryController.js",
 			"settings":
 			{
-				"buffer_size": 214,
-				"line_ending": "Windows",
-				"name": "var EventModel"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 109,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content/js/rsp/cmp/player/control.tpl",
-			"settings":
-			{
-				"buffer_size": 499,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "content/js/text.js",
-			"settings":
-			{
-				"buffer_size": 15610,
-				"line_ending": "Windows",
-				"name": "/**"
-			}
-		},
-		{
-			"file": "content/js/main.js",
-			"settings":
-			{
-				"buffer_size": 329,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "content/js/rsp/App.js",
-			"settings":
-			{
-				"buffer_size": 396,
+				"buffer_size": 802,
 				"line_ending": "Windows"
 			}
 		},
@@ -202,10 +116,34 @@
 			}
 		},
 		{
-			"file": "content/js/sui/render.js",
+			"file": "content/js/sui/mediator2.js",
 			"settings":
 			{
-				"buffer_size": 318,
+				"buffer_size": 1733,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/sui/mediator.js",
+			"settings":
+			{
+				"buffer_size": 1350,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/rsp/App.js",
+			"settings":
+			{
+				"buffer_size": 592,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/rsp/EventModel.js",
+			"settings":
+			{
+				"buffer_size": 1669,
 				"line_ending": "Windows"
 			}
 		}
@@ -237,31 +175,41 @@
 	},
 	"file_history":
 	[
-		"/R/workspace/node/rasplayer/rsp/rasplayer.js",
-		"/R/workspace/node/rasplayer/content/js/globals.js",
-		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/playlist.tpl",
-		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/LibraryController.js",
-		"/R/files/ftp.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/EventModel.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/App.js",
+		"/R/workspace/node/rasplayer/content/js/sui/mediator.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/PlayerController.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/PlaylistController.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/playlist.tpl",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/LibraryController.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/library.tpl",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/LibraryView.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/ControlView.js",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/PlaylistView.js",
+		"/R/workspace/node/rasplayer/content/index.html",
+		"/R/workspace/node/rasplayer/rsp/rasplayer.js",
+		"/R/workspace/node/rasplayer/node_modules/slimple/core/server.js",
+		"/R/workspace/node/rasplayer/README.md",
+		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/control.tpl",
+		"/R/workspace/node/rasplayer/content/js/text.js",
+		"/R/workspace/node/rasplayer/content/js/main.js",
+		"/R/workspace/node/rasplayer/content/js/sui/sui.js",
+		"/R/workspace/node/rasplayer/content/js/sui/render.js",
+		"/R/workspace/node/rasplayer/content/js/globals.js",
+		"/R/files/ftp.js",
 		"/R/workspace/node/rasplayer/services/rsp/player.js",
 		"/R/workspace/node/rasplayer/app.js",
-		"/R/workspace/node/rasplayer/content/index.html",
 		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/Playlist.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/PlayerService.js",
 		"/R/workspace/node/rasplayer/content/templates/library.html",
 		"/R/workspace/node/rasplayer/content/templates/playlist.html",
-		"/R/workspace/node/rasplayer/content/js/rsp/cmp/playlist/PlaylistView.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/Control.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/config.js",
-		"/R/workspace/node/rasplayer/content/js/rsp/cmp/player/ControlView.js",
 		"/R/workspace/node/rasplayer/content/templates/control.html",
 		"/R/workspace/node/rasplayer/services/rsp/resume.js",
 		"/R/workspace/node/rasplayer/services/rsp/back.js",
 		"/R/workspace/node/rasplayer/services/rsp/next.js",
 		"/R/workspace/node/rasplayer/content/js/sui/swipe.js",
-		"/R/workspace/node/rasplayer/content/js/sui/sui.js",
-		"/R/workspace/node/rasplayer/content/js/rsp/App.js",
 		"/R/workspace/node/rasplayer/services/rsp/playlist.js",
 		"/R/workspace/node/rasplayer/services/rsp/queue.js",
 		"/R/workspace/node/rasplayer/services/rsp/play.js",
@@ -270,14 +218,11 @@
 		"/R/workspace/node/rasplayer/services/echo/echo.js",
 		"/R/workspace/node/rasplayer/services/fs/list.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/FileService.js",
-		"/R/workspace/node/rasplayer/content/js/main.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/Library.js",
-		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/LibraryView.js",
 		"/R/workspace/node/rasplayer/config/app.js",
 		"/R/workspace/node/rasplayer/config/log.js",
 		"/R/workspace/node/rasplayer/node_modules/slimple/log/logger.js",
 		"/R/workspace/node/soundboard/ui/js/soundboard/App.js",
-		"/R/workspace/node/rasplayer/content/js/sui/mediator.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/cmp/library/LibraryController",
 		"/R/workspace/node/rasplayer/content/stuff.html",
 		"/R/workspace/node/rasplayer/content/js/rsp/view/PlayerControl.js",
@@ -287,7 +232,6 @@
 		"/R/workspace/node/slimple/addendum/services/echo/echo.js",
 		"/R/workspace/node/rasplayer/services/rsp/pause.js",
 		"/R/workspace/node/rasplayer/content/js/rsp/view/Playlist.js",
-		"/R/workspace/node/rasplayer/content/js/sui/render.js",
 		"/R/workspace/node/slimple/addendum-test/app.js",
 		"/R/workspace/node/slimple/addendum-test/config/app.js",
 		"/R/workspace/node/slimple/addendum-test/content/templates/list.ejs",
@@ -321,9 +265,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -331,6 +276,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"model.",
+			"model",
+			"rsp.rerender",
+			"rsp.playlist.item.click",
+			"togglePlay",
+			"alert",
+			"trigger",
 			"rsp.player.track.play",
 			"currentPlaylist",
 			"retr",
@@ -381,16 +333,45 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "content/js/rsp/cmp/library/library.tpl",
+					"file": "content/js/rsp/EventModel2.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 529,
+						"buffer_size": 1302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								861,
+								861
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 342.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "content/js/rsp/cmp/playlist/PlaylistController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1756,
 						"regions":
 						{
 						},
@@ -398,37 +379,7 @@
 						[
 							[
 								0,
-								529
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "content/js/rsp/cmp/library/LibraryView.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 279,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								140,
-								140
+								0
 							]
 						],
 						"settings":
@@ -437,27 +388,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 307.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "content/js/rsp/cmp/player/ControlView.js",
+					"file": "content/js/rsp/cmp/player/PlayerController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 281,
+						"buffer_size": 2838,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								55,
-								19
+								1734,
+								1698
 							]
 						],
 						"settings":
@@ -466,27 +417,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 35.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "content/js/rsp/cmp/playlist/PlaylistView.js",
+					"file": "content/js/rsp/cmp/library/LibraryController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 278,
+						"buffer_size": 802,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								164,
-								164
+								0,
+								0
 							]
 						],
 						"settings":
@@ -498,31 +449,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "content/index.html",
+					"file": "content/js/sui/sui.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1729,
+						"buffer_size": 184,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1042,
-								997
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -533,108 +482,19 @@
 				},
 				{
 					"buffer": 5,
-					"file": "content/js/rsp/cmp/playlist/PlaylistController.js",
+					"file": "content/js/sui/mediator2.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1682,
+						"buffer_size": 1733,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								539,
-								539
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 7.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "rsp/rasplayer.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3984,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								258,
-								258
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "node_modules/slimple/core/server.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1378,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								558,
-								558
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "content/js/rsp/cmp/player/PlayerController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2873,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								740,
-								740
+								871,
+								871
 							]
 						],
 						"settings":
@@ -650,82 +510,55 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "content/js/rsp/EventModel.js",
+					"buffer": 6,
+					"file": "content/js/sui/mediator.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 214,
+						"buffer_size": 1350,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								112,
-								112
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "var EventModel",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 22.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "README.md",
+					"buffer": 7,
+					"file": "content/js/rsp/App.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 109,
+						"buffer_size": 592,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								109,
-								109
+								230,
+								230
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "content/js/rsp/cmp/player/control.tpl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 499,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								394,
-								394
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -735,79 +568,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "content/js/text.js",
+					"buffer": 8,
+					"file": "content/js/rsp/EventModel.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15610,
+						"buffer_size": 1669,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15610,
-								15610
-							]
-						],
-						"settings":
-						{
-							"auto_name": "/**",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5172.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "content/js/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 329,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								132,
-								132
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "content/js/rsp/App.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 396,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								337,
-								337
+								492,
+								492
 							]
 						],
 						"settings":
@@ -819,64 +593,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "content/js/sui/sui.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 184,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								157,
-								157
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "content/js/sui/render.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 318,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								311,
-								311
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -954,7 +671,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 198.0,
+	"side_bar_width": 268.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

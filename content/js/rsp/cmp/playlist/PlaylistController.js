@@ -6,35 +6,16 @@ define([
 ], function($, mediator, view, playerService) {
 
 	var renderPlaylist = function(callback){
+		var evt = this;
 		playerService.getCurrentPlaylist(function(playlist){
-			view.render({ playlist: playlist.reverse() });
+			view.render({ playlist: playlist.reverse() }, evt.trigger ? evt.trigger : callback);
 		});
 	};
-
-	var onRerenderPlaylist = function(){
-		mediator.on('rsp.player.playlist.rerender', function(callback){
-			renderPlaylist(callback);
-		});
-	};
-
-	var onPlayTrack = function(){
-		mediator.on('rsp.player.track.play', function(){
-			renderPlaylist();
-		});
-	};
-
-	/*var onTrackClick = function(){
-		$('#rsp-playlist').on('click', 'a', function(event){
-			event.preventDefault();
-			mediator.trigger('rsp.playlist.item.click',this);
-		});
-	};*/
 
 	var onSwipeLeft = function(){
 		$(document).on('swl', function(){
 			$('.off-canvas-wrap').addClass('move-left');
 			renderPlaylist();
-			mediator.trigger('rsp.player.control.rerender');
 		});
 	};
 
@@ -45,30 +26,21 @@ define([
 	};
 
 	var queueItem = function(item){
-		//mediator.on('rsp.library.item.queue', function(item){
-			playerService.queue(item.getAttribute('data-href'), this.trigger);
-		//});
+		playerService.queue(item.getAttribute('data-href'), this.trigger);
 	};
 
-	var onTogglePlaylist = function(){
-		$('.right-off-canvas-toggle').on('click', function(){
-			renderPlaylist();
-			mediator.trigger('rsp.player.control.rerender');
-		});
+	var togglePlaylist = function(){
+		renderPlaylist();
+		this.trigger();
 	};
 
 	var bindEvents = function(){
-		onPlayTrack();
-		//onTrackClick();
 		onSwipeRight();
 		onSwipeLeft();
-		//onItemQueue();
-		onTogglePlaylist();
-		onRerenderPlaylist();
 	};
 	var run = function(data){
-		renderPlaylist();
 		bindEvents();
+		renderPlaylist();
 	};
 	return {
 		run : run,
