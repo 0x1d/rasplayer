@@ -75,6 +75,14 @@ define([
 		}
 	};
 
+	var decreaseVolume = function(){
+		playerService.decreaseVolume();
+    };
+
+    var increaseVolume = function(){
+		playerService.increaseVolume();
+    };
+
 	var run = function(){
 	};
 
@@ -88,6 +96,8 @@ define([
 		playTrack : playTrack,
 		playlistItemPlay : playlistItemPlay,
 		resize : resize,
-		refreshControl : refreshControl
+		refreshControl : refreshControl,
+		increaseVolume : increaseVolume,
+		decreaseVolume : decreaseVolume 
 	};
 });

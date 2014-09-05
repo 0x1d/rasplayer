@@ -3,36 +3,39 @@ var lame = require('lame');
 var Speaker = require('speaker');
 var ps = require('pause-stream')();
 var id3 = require('id3js');
+var child_process = require('child_process');
+var exec = child_process.exec;
 
 var Rasplayer = function(){
 
+  var rasplayer = this;
+
+  var omx = require('omx-manager'); //omx-manager
   var speaker;
   var currentStream;
   var decoder;
   var currentPlaylist = [];
   var currentTrack = -1;
   var currentTrackTag = {};
+  var manualStop = false;
 
-  this.play = function(file, tagsCallback){
+  this.play = function(file, tagsCallback, manual){
     // stop current stream if already one running
-    if(currentStream){
+    if(manual){
       this.stop();
+    } else {
+      manualStop = false;
     }
     // play the stream
-    var stream = fs.createReadStream(file);
-    if(file.indexOf('mp3') > -1){
-      this.playStream(stream);  
-      // get the id3 tags
-      if(tagsCallback){
-        id3({ file: file, type: id3.OPEN_LOCAL }, function(err, id3tag) {
-          var tag = parseTag(id3tag);
-          currentTrackTag = tag;
-          tagsCallback(tag);
-        });
-      }
-    } else if(file.indexOf('wav') > -1){
-      this.playWavStream(stream);
-    }
+    omx.play(file);
+    // parse id3tag
+    if(tagsCallback && file.indexOf('mp3') > -1){
+      id3({ file: file, type: id3.OPEN_LOCAL }, function(err, id3tag) {
+        var tag = parseTag(id3tag);
+        currentTrackTag = tag;
+        tagsCallback(tag);
+      });
+    } 
   };
 
   this.queue = function(file){
@@ -45,7 +48,7 @@ var Rasplayer = function(){
             name : tags.artist + ' - ' + tags.title,
             path: file
           });
-          if(!currentStream){
+          if(!omx.isPlaying()){
             currentTrack = currentPlaylist.length - 1;
             player.play(file, function(){});
           }
@@ -55,7 +58,7 @@ var Rasplayer = function(){
       var trackId = currentPlaylist.length;
       currentPlaylist.push({
         id: trackId,
-        name : 'null',
+        name : 'unknown',
         path: file
       });
     }
@@ -64,7 +67,7 @@ var Rasplayer = function(){
   this.playFromPlaylist = function(trackId, callback){
     currentTrack = trackId;
     //console.log(currentPlaylist[trackId]);
-    this.play(currentPlaylist[trackId].path, callback);
+    this.play(currentPlaylist[trackId].path, callback, true);
   };
 
   this.playStream = function(readable){
@@ -72,48 +75,36 @@ var Rasplayer = function(){
     currentStream.pipe(new lame.Decoder()).on('format', route);
     this.trackFinished(readable);
   };
-  this.playWavStream = function(readable){
-    currentStream = readable;
-    speaker = new Speaker();
-    currentStream.pipe(speaker);
-    this.trackFinished(readable);
-  };
 
   this.stop = function(){
-    if(currentStream){
-      currentStream.unpipe(speaker);
-      currentStream.destroy();
-      speaker.close();
-      currentStream = null;
-    }
+    manualStop = true;
+    omx.stop();
+    // hack for unterminated child processes
+    exec('pkill omxplayer');
   };
 
   this.resume = function(){
-    if(currentStream){
-      currentStream.pipe(ps.resume());
-    }
+    omx.play();
   };
 
   this.pause = function(){
-    if(currentStream){
-      currentStream.pipe(ps.pause());
-    }
+    omx.pause();
   };
 
-  this.next = function(callback){
+  this.next = function(callback, manual){
     if(currentTrack < currentPlaylist.length){
       currentTrack++;
       if(currentPlaylist[currentTrack]){
-        this.play(currentPlaylist[currentTrack].path, callback);
+        this.play(currentPlaylist[currentTrack].path, callback, manual);
       }
     }
   };
 
-  this.back = function(callback){
+  this.back = function(callback, manual){
     if(currentTrack > 0){
       currentTrack--;
       if(currentPlaylist[currentTrack]){
-        this.play(currentPlaylist[currentTrack].path, callback);
+        this.play(currentPlaylist[currentTrack].path, callback, manual);
       }
     }
   };
@@ -139,20 +130,26 @@ var Rasplayer = function(){
     currentTrack = 0;
   };
 
-  this.trackFinished = function(stream){
+  this.trackFinished = function(){
     var rasplayer = this;
-    stream.on('end', function(){
-      //console.log('TRACK FINISHED');
-      rasplayer.stop();
-      rasplayer.next();
+    omx.on('end', function(){
+      if(!manualStop){
+        rasplayer.next(function(){},false);
+      } else {
+        manualStop = false;
+      }
     });
   };
 
-  var route = function(format){
-    speaker = new Speaker(format);
-    this.pipe(speaker);
+  this.increaseVolume = function(){
+    omx.increaseVolume();
   };
 
+  this.decreaseVolume = function(){
+    omx.decreaseVolume();
+  };
+
+  // private methods
   var parseTag = function(tag){
       return {
           artist : tag.artist,
@@ -161,5 +158,11 @@ var Rasplayer = function(){
           year : tag.year
       };
   };
+
+  (function registerOmxEvents(){
+    rasplayer.trackFinished();
+    omx.enableHangingHandler();
+  })();
+
 }
 module.exports = Rasplayer;

@@ -1,7 +1,7 @@
 define(function() {
 	var config = {
 		music : {
-			path: '/mnt/smbdisk'
+			path: '/automnt/'
 		},
 		service: {
 			play: '/rsp/play',
@@ -12,7 +12,9 @@ define(function() {
 			back: '/rsp/back/',
 			queue: '/rsp/queue',
 			playlist: '/rsp/playlist/',
-			currentTrack: '/rsp/currentTrack/'
+			currentTrack: '/rsp/currentTrack/',
+			increaseVolume: '/rsp/increaseVolume/',
+			decreaseVolume: '/rsp/decreaseVolume/'
 		}
 	};
 	return config;

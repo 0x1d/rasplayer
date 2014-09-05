@@ -18,7 +18,7 @@ define([
 			renderPlaylist();
 		});
 	};
-
+ 
 	var onSwipeRight = function(){
 		$(document).on('swr', function(){
 			$('.off-canvas-wrap').removeClass('move-left');

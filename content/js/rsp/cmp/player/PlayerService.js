@@ -45,6 +45,14 @@ define([
 		$.getJSON(config.service.currentTrack, callback);
 	};
 
+	var increaseVolume = function(callback){
+		$.getJSON(config.service.increaseVolume, callback);
+	};
+
+	var decreaseVolume = function(callback){
+		$.getJSON(config.service.decreaseVolume, callback);
+	};
+
 	return {
 		play : play,
 		stop : stop,
@@ -54,6 +62,8 @@ define([
 		queue : queue,
 		next : next,
 		back : back,
-		currentTrack : currentTrack
+		currentTrack : currentTrack,
+		increaseVolume : increaseVolume,
+		decreaseVolume : decreaseVolume
 	};
 });

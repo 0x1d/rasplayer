@@ -6,15 +6,16 @@ body {
 	display: none;
 }
 .player-control {
-	margin-top: 15px;
+	margin-top: 5px;
 	margin-left: 6px;
+	margin-bottom: 5px;
 }
 .player-control .button-group {
 	margin-right: 0px;
 }
 .player-control .button.small {
 	width: 60px;
-	height: 56px;
+	/*height: 56px;*/
 }
 
 .player-control .rsp-control {
@@ -41,6 +42,14 @@ body {
 
 .player-control .rsp-control.next {
 	background-image: url(../img/forward.png);
+}
+
+.player-control .rsp-control.volume-down {
+	background-image: url(../img/volume-down.png);
+}
+
+.player-control .rsp-control.volume-up {
+	background-image: url(../img/volume-up.png);
 }
 
 .rsp-track-info {
@@ -72,4 +81,12 @@ body {
 
 #rsp-playlist li[data-playing="true"] {
 	background-color: #008cba;
+}
+
+.player-control.volume-control {
+	margin-left: 66px;
+}
+
+.player-control .button-group li a {
+	margin-bottom: 0px;
 }

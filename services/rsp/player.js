@@ -17,7 +17,7 @@ module.exports = {
         } else {
             ctx.rasplayer.play('/'+track, function getTags(tag){
                 http.reply(service.parseTag(tag));
-            });
+            }, true);
         }
     },
 
@@ -39,13 +39,13 @@ module.exports = {
     next : function(ctx, http){
         ctx.rasplayer.next(function(tags){
         	http.reply(tags);
-        });
+        }, true);
     },
 
     back: function(ctx, http){
 		ctx.rasplayer.back(function(tags){
 			http.reply(tags);
-		});
+		}, true);
     },
 
     playlist: function(ctx, http){
@@ -59,6 +59,16 @@ module.exports = {
 
     currentTrack: function(ctx, http){
     	http.reply(ctx.rasplayer.getCurrentTrackTag());
+    },
+
+    increaseVolume: function(ctx, http){
+        ctx.rasplayer.increaseVolume();
+        http.reply({});
+    },
+
+    decreaseVolume: function(ctx, http){
+        ctx.rasplayer.decreaseVolume();
+        http.reply({});
     },
 
     parseTag : function(tag){

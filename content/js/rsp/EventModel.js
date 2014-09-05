@@ -23,6 +23,12 @@ define([
 			togglePlay : {
 				handler : player.togglePlay,
 				trigger : [ player.renderControl ]
+			},
+			increaseVolume : {
+				handler : player.increaseVolume
+			},
+			decreaseVolume : {
+				handler : player.decreaseVolume
 			}
 		},
 		playlist : {
@@ -31,7 +37,7 @@ define([
 			},
 			show : {
 				handler : playlist.renderPlaylist,
-				trigger : [ player.refreshControl ]
+				trigger : [ player.refreshControl, player.resize ]
 			},
 			item : {
 				click : {
@@ -47,7 +53,8 @@ define([
 					trigger : [ player.resize ]
 				},
 				click : {
-					handler : player.playTrack
+					handler : player.playTrack,
+					trigger : [ player.resize ]
 				}
 			}
 		},
@@ -63,7 +70,9 @@ define([
 					'.rsp-control.back' : rsp.player.back,
 					'.rsp-control.stop' : rsp.player.stop,
 					'.rsp-control.play' : rsp.player.togglePlay,
-					'.rsp-control.pause' : rsp.player.togglePlay
+					'.rsp-control.pause' : rsp.player.togglePlay,
+					'.rsp-control.volume-up' : rsp.player.increaseVolume,
+					'.rsp-control.volume-down' : rsp.player.decreaseVolume
 				}
 			},
 			'#rsp-library' : {
