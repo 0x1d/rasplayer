@@ -1,7 +1,4 @@
 var fs = require('fs');
-var lame = require('lame');
-var Speaker = require('speaker');
-var ps = require('pause-stream')();
 var id3 = require('id3js');
 var child_process = require('child_process');
 var exec = child_process.exec;
@@ -9,11 +6,7 @@ var exec = child_process.exec;
 var Rasplayer = function(){
 
   var rasplayer = this;
-
-  var omx = require('omx-manager'); //omx-manager
-  var speaker;
-  var currentStream;
-  var decoder;
+  var omx = require('omx-manager');
   var currentPlaylist = [];
   var currentTrack = -1;
   var currentTrackTag = {};
@@ -68,12 +61,6 @@ var Rasplayer = function(){
     currentTrack = trackId;
     //console.log(currentPlaylist[trackId]);
     this.play(currentPlaylist[trackId].path, callback, true);
-  };
-
-  this.playStream = function(readable){
-    currentStream = readable;
-    currentStream.pipe(new lame.Decoder()).on('format', route);
-    this.trackFinished(readable);
   };
 
   this.stop = function(){
@@ -159,6 +146,7 @@ var Rasplayer = function(){
       };
   };
 
+  // event handlers
   (function registerOmxEvents(){
     rasplayer.trackFinished();
     omx.enableHangingHandler();

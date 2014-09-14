@@ -90,3 +90,9 @@ body {
 .player-control .button-group li a {
 	margin-bottom: 0px;
 }
+
+.rsp-toast {
+    /*border: 1px solid black;*/
+    position: absolute;
+    right: 75px;
+}

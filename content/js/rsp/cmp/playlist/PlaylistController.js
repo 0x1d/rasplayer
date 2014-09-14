@@ -2,8 +2,9 @@ define([
 	'jquery',
 	'sui/mediator',
 	'rsp/cmp/playlist/PlaylistView',
-	'rsp/cmp/player/PlayerService'
-], function($, mediator, view, playerService) {
+	'rsp/cmp/player/PlayerService',
+    'rsp/cmp/toast/Toast'
+], function($, mediator, view, playerService, toast) {
 
 	var renderPlaylist = function(callback){
 		var evt = this;
@@ -26,6 +27,9 @@ define([
 	};
 
 	var queueItem = function(item){
+        toast.notify($(item).parent().find('a').text(),{
+            top: item.offsetTop - 15
+        });
 		playerService.queue(item.getAttribute('data-href'), this.trigger);
 	};
 
