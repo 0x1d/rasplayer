@@ -13,8 +13,8 @@
               {{text}}
             </div>
           </a>
-          <button class="rsp-item-queue" data-href="{{href}}" data-isfolder="{{isFolder}}" value="Queue">
-          Queue
+          <button class="rsp-item-queue folder-{{isFolder}}" data-href="{{href}}" data-isfolder="{{isFolder}}" value="Queue">
+            Queue
           </button>
         </td>
       </tr>

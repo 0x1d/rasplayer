@@ -74,11 +74,17 @@ body {
 	margin: 0px;
 	float: right;
 	padding: 5px;
+    margin-top: 6px;
 }
+.rsp-item-queue.folder-true {
+    background-color: #f08a24;
+    border-color: #de770f;
+}
+/*
 .rsp-item-queue[data-isfolder="true"] {
 	display:none;
 }
-
+*/
 #rsp-playlist li[data-playing="true"] {
 	background-color: #008cba;
 }
@@ -94,5 +100,5 @@ body {
 .rsp-toast {
     /*border: 1px solid black;*/
     position: absolute;
-    right: 75px;
+    right: 90px;
 }

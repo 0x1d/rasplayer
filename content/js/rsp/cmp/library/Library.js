@@ -9,7 +9,7 @@ define([
 		fs.list(path, function(folder){
 			folder.parent = path;
 			view.render(folder, function(){
-				ctrl.bindEvents();
+                $('.rsp-item-queue[data-isfolder="true"]:first').hide();
 			});
 		});
 	};

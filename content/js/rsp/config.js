@@ -1,7 +1,7 @@
 define(function() {
 	var config = {
 		music : {
-			path: '/automnt/'
+			path: '/automnt/MyPassport'
 		},
 		service: {
 			play: '/rsp/play',

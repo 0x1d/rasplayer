@@ -4,12 +4,20 @@
 		"selected_items":
 		[
 			[
-				"trigger",
-				"triggerEvent"
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-left"
 			],
 			[
 				"on",
-				"onEvent"
+				"onSwipeLeft"
+			],
+			[
+				"trigger",
+				"triggerEvent"
 			],
 			[
 				"render",
@@ -82,6 +90,108 @@
 				"buffer_size": 310,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "content/templates/control.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/rsp/cmp/playlist/PlaylistController.js",
+			"settings":
+			{
+				"buffer_size": 1193,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/rsp/cmp/player/PlayerController.js",
+			"settings":
+			{
+				"buffer_size": 2282,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/rsp/App.js",
+			"settings":
+			{
+				"buffer_size": 492,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/index.html",
+			"settings":
+			{
+				"buffer_size": 1772,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/rsp/cmp/player/ControlView.js",
+			"settings":
+			{
+				"buffer_size": 281,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "",
+			"file": "content/js/rsp/cmp/player/control.tpl",
+			"file_size": 770,
+			"file_write_time": 130543167717931510,
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/css/style.css",
+			"settings":
+			{
+				"buffer_size": 1701,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "",
+			"file": "content/js/rsp/config.js",
+			"file_size": 370,
+			"file_write_time": 130543904542873048,
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "content/js/rsp/EventModel.js",
+			"settings":
+			{
+				"buffer_size": 2214,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/app.js",
+			"settings":
+			{
+				"buffer_size": 306,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Patrick/Desktop/playercorefactory.xml",
+			"settings":
+			{
+				"buffer_size": 5819,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -108,11 +218,12 @@
 	},
 	"file_history":
 	[
+		"//piap/homes/rasplayer/rsp/rasplayer.js",
+		"//piap/homes/rasplayer/content/js/rsp/cmp/library/LibraryController.js",
+		"//piap/homes/rasplayer/content/js/rsp/cmp/player/PlayerController.js",
 		"//piap/homes/rasplayer/content/js/sui/mediator2.js",
 		"//piap/homes/rasplayer/content/js/rsp/EventModel2.js",
 		"//piap/homes/rasplayer/content/js/rsp/cmp/playlist/PlaylistController.js",
-		"//piap/homes/rasplayer/content/js/rsp/cmp/player/PlayerController.js",
-		"//piap/homes/rasplayer/content/js/rsp/cmp/library/LibraryController.js",
 		"//piap/homes/rasplayer/content/js/sui/sui.js",
 		"//piap/homes/rasplayer/content/js/sui/mediator.js",
 		"//piap/homes/rasplayer/content/js/rsp/App.js",
@@ -218,6 +329,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CHOOSE PLAYER NAME HERE",
 			"model.",
 			"model",
 			"rsp.rerender",
@@ -264,6 +376,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"MXPlayerFree",
 			""
 		],
 		"reverse": false,
@@ -275,7 +388,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 12,
 			"sheets":
 			[
 				{
@@ -290,8 +403,8 @@
 						"selection":
 						[
 							[
-								298,
-								298
+								0,
+								0
 							]
 						],
 						"settings":
@@ -300,6 +413,329 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "content/templates/control.html",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "content/js/rsp/cmp/playlist/PlaylistController.js",
+					"settings":
+					{
+						"buffer_size": 1193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "content/js/rsp/cmp/player/PlayerController.js",
+					"settings":
+					{
+						"buffer_size": 2282,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "content/js/rsp/App.js",
+					"settings":
+					{
+						"buffer_size": 492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "content/index.html",
+					"settings":
+					{
+						"buffer_size": 1772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "content/js/rsp/cmp/player/ControlView.js",
+					"settings":
+					{
+						"buffer_size": 281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "content/js/rsp/cmp/player/control.tpl",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "content/css/style.css",
+					"settings":
+					{
+						"buffer_size": 1701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "content/js/rsp/config.js",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "content/js/rsp/EventModel.js",
+					"settings":
+					{
+						"buffer_size": 2214,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "config/app.js",
+					"settings":
+					{
+						"buffer_size": 306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/C/Users/Patrick/Desktop/playercorefactory.xml",
+					"settings":
+					{
+						"buffer_size": 5819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5819,
+								5819
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1870.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -367,6 +803,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 268.0,
+	"side_bar_width": 183.0,
 	"status_bar_visible": true
 }

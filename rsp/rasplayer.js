@@ -23,43 +23,49 @@ var Rasplayer = function(){
     omx.play(file);
     // parse id3tag
     if(tagsCallback && file.indexOf('mp3') > -1){
-      id3({ file: file, type: id3.OPEN_LOCAL }, function(err, id3tag) {
-        var tag = parseTag(id3tag);
-        currentTrackTag = tag;
-        tagsCallback(tag);
-      });
-    } 
+        id3({ file: file, type: id3.OPEN_LOCAL }, function(err, id3tag) {
+            var tag = parseTag(id3tag);
+            currentTrackTag = tag;
+            tagsCallback(tag);
+        });
+    } else if(tagsCallback) {
+        var filename = parseFilename(file);
+        tagsCallback(filename);
+    }
   };
 
   this.queue = function(file){
     var player = this;
     try{
-      id3({ file: file, type: id3.OPEN_LOCAL }, function(err, tags) {
-          var trackId = currentPlaylist.length;
-          currentPlaylist.push({
-            id: trackId,
-            name : tags.artist + ' - ' + tags.title,
-            path: file
-          });
-          if(!omx.isPlaying()){
-            currentTrack = currentPlaylist.length - 1;
-            player.play(file, function(){});
-          }
-        });
+        if(file.indexOf('.mp3') > -1) {
+          id3({ file: file, type: id3.OPEN_LOCAL }, function(err, tags) {
+              var trackId = currentPlaylist.length;
+              currentPlaylist.push({
+                id: trackId,
+                name : tags.artist + ' - ' + tags.title,
+                path: file
+              });
+              if(!omx.isPlaying()){
+                currentTrack = currentPlaylist.length - 1;
+                player.play(file, function(){});
+              }
+            });
+        } else {
+            var filename = parseFilename(file);
+            var trackId = currentPlaylist.length;
+            currentPlaylist.push({
+                id: trackId,
+                name : filename,
+                path: file
+            });
+        }
     } catch(error) {
-      console.log('error while reading id3tag ' + error);
-      var trackId = currentPlaylist.length;
-      currentPlaylist.push({
-        id: trackId,
-        name : 'unknown',
-        path: file
-      });
+      console.log('error while queue file ' + error);
     }
   };
 
   this.playFromPlaylist = function(trackId, callback){
     currentTrack = trackId;
-    //console.log(currentPlaylist[trackId]);
     this.play(currentPlaylist[trackId].path, callback, true);
   };
 
@@ -144,6 +150,10 @@ var Rasplayer = function(){
           album : tag.album,
           year : tag.year
       };
+  };
+    
+  var parseFilename = function(file) {
+    return file.replace(/^.*[\\\/]/, '');
   };
 
   // event handlers

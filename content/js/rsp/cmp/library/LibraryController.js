@@ -8,32 +8,14 @@ define([
 		fs.list(path, function(folder){
 			folder.parent = path;
 			view.render(folder, function(){
+                window.scrollTo(0,0);
+                $('.rsp-item-queue[data-isfolder="true"]:first').hide();
 				mediator.trigger('rsp.resize');
 			});
 		});
 	};
 
-	var onItemClick = function(){
-		/*$('#rsp-library').on('click', 'a', function(event){
-			event.preventDefault();
-			mediator.trigger('rsp.library.item.click', this);
-		});*/
-	};
-
-	var onItemQueue = function(){
-		/*$('#rsp-library').on('click', '.rsp-item-queue', function(event){
-			event.preventDefault();
-			mediator.trigger('rsp.library.item.queue', this);
-		});*/
-	}
-
-	var bindEvents = function(){
-		onItemClick();
-		onItemQueue();
-	};
-
-	return {
-		bindEvents : bindEvents,
+    return {
 		update : update
 	};
 });
