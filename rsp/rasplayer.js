@@ -5,12 +5,17 @@ var exec = child_process.exec;
 
 var Rasplayer = function(){
 
+  var ctx;
   var rasplayer = this;
   var omx = require('omx-manager');
   var currentPlaylist = [];
   var currentTrack = -1;
   var currentTrackTag = {};
   var manualStop = false;
+
+  this.setContext = function(context){
+    ctx = context;
+  };
 
   this.play = function(file, tagsCallback, manual){
     // stop current stream if already one running
@@ -21,16 +26,21 @@ var Rasplayer = function(){
     }
     // play the stream
     omx.play(file);
+    var whatsPlaying;
     // parse id3tag
     if(tagsCallback && file.indexOf('mp3') > -1){
         id3({ file: file, type: id3.OPEN_LOCAL }, function(err, id3tag) {
             var tag = parseTag(id3tag);
             currentTrackTag = tag;
             tagsCallback(tag);
+            whatsPlaying = tag.artist + ' ' + tag.title;
+            ctx.event.emit('rsp.play', whatsPlaying); 
         });
     } else if(tagsCallback) {
         var filename = parseFilename(file);
         tagsCallback(filename);
+        whatsPlaying = filename;
+        ctx.event.emit('rsp.play', whatsPlaying); 
     }
   };
 
@@ -40,9 +50,10 @@ var Rasplayer = function(){
         if(file.indexOf('.mp3') > -1) {
           id3({ file: file, type: id3.OPEN_LOCAL }, function(err, tags) {
               var trackId = currentPlaylist.length;
+              var trackName = tags.artist + ' - ' + tags.title;
               currentPlaylist.push({
                 id: trackId,
-                name : tags.artist + ' - ' + tags.title,
+                name : trackName,
                 path: file
               });
               if(!omx.isPlaying()){

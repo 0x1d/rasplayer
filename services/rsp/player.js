@@ -4,6 +4,7 @@ module.exports = {
 
     GET: function(ctx, http){
     	var service = this;
+        ctx.rasplayer.setContext(ctx);
     	service[http.data.action](ctx, http);
     },
 
@@ -78,6 +79,14 @@ module.exports = {
             album : tag.album,
             year : tag.year
         };
+    },
+
+    getTrackName : function(tag){
+        if(tag.artist){
+            return tag.artist + ' ' + tag.title;
+        } else {
+            return tag;
+        }
     }
 
 };

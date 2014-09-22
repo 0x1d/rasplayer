@@ -10,7 +10,7 @@ define([
 		event.preventDefault();
 		var href = playlist ? '/'+item.getAttribute('data-trackid') : item.getAttribute('href');
 		if(item.getAttribute('data-isfolder') === 'true'){
-			library.update(href);
+			library.update(href, this.trigger);
 		} else {
 			playerService.play(href, playlist, function(id3tag){
 				callback.trigger(id3tag);
