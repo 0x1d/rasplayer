@@ -29,7 +29,7 @@ module.exports = {
   name: 'rsp.play',
   invoke: function(ctx, data){
       ctx.log.info("rsp.play " + data);
-      karotz.tts.say(data);
+      //karotz.tts.say(data);
   }
     
 };

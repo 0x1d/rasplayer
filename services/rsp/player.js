@@ -72,6 +72,16 @@ module.exports = {
         http.reply({});
     },
 
+    toggleLanguage: function(ctx, http){
+        ctx.rasplayer.toggleLanguage();
+        http.reply({});
+    },
+
+    clearPlaylist: function(ctx, http){
+        ctx.rasplayer.clearPlaylist();
+        http.reply({});
+    },
+
     parseTag : function(tag){
         return {
             artist : tag.artist,

@@ -52,6 +52,14 @@ body {
 	background-image: url(../img/volume-up.png);
 }
 
+.player-control .rsp-control.language {
+	background-image: url(../img/language.png);
+}
+
+.player-control .rsp-control.clear {
+	background-image: url(../img/trash.png);
+}
+
 .rsp-track-info {
 	color: white;
 	margin-left: 25px;
@@ -79,6 +87,7 @@ body {
 .rsp-item-queue.folder-true {
     background-color: #f08a24;
     border-color: #de770f;
+    display: none;
 }
 /*
 .rsp-item-queue[data-isfolder="true"] {
@@ -88,11 +97,11 @@ body {
 #rsp-playlist li[data-playing="true"] {
 	background-color: #008cba;
 }
-
+/*
 .player-control.volume-control {
 	margin-left: 66px;
 }
-
+*/
 .player-control .button-group li a {
 	margin-bottom: 0px;
 }

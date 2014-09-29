@@ -29,6 +29,13 @@ define([
 			},
 			decreaseVolume : {
 				handler : player.decreaseVolume
+			},
+			clearPlaylist : {
+				handler : player.clearPlaylist,
+				trigger :  [ player.refreshControl, playlist.renderPlaylist ]
+			},
+			toggleLanguage : {
+				handler : player.toggleLanguage
 			}
 		},
 		playlist : {
@@ -72,7 +79,9 @@ define([
 					'.rsp-control.play' : rsp.player.togglePlay,
 					'.rsp-control.pause' : rsp.player.togglePlay,
 					'.rsp-control.volume-up' : rsp.player.increaseVolume,
-					'.rsp-control.volume-down' : rsp.player.decreaseVolume
+					'.rsp-control.volume-down' : rsp.player.decreaseVolume,
+					'.rsp-control.clear' : rsp.player.clearPlaylist,
+					'.rsp-control.language' : rsp.player.toggleLanguage
 				}
 			},
 			'#rsp-library' : {

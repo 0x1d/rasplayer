@@ -14,7 +14,9 @@ define(function() {
 			playlist: '/rsp/playlist/',
 			currentTrack: '/rsp/currentTrack/',
 			increaseVolume: '/rsp/increaseVolume/',
-			decreaseVolume: '/rsp/decreaseVolume/'
+			decreaseVolume: '/rsp/decreaseVolume/',
+			toggleLanguage : '/rsp/toggleLanguage/',
+			clearPlaylist : '/rsp/clearPlaylist/'
 		}
 	};
 	return config;

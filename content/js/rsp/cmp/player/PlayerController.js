@@ -27,7 +27,7 @@ define([
 		view.render(id3tag);
 	};
 
-	var refreshControl = function(id3tag){
+	var refreshControl = function(){
 		playerService.currentTrack(function(tag){
 			renderControl(tag);
 		});
@@ -83,6 +83,14 @@ define([
 		playerService.increaseVolume();
     };
 
+    var toggleLanguage = function(){
+		playerService.toggleLanguage();
+    };
+
+    var clearPlaylist = function(){
+		playerService.clearPlaylist(this.trigger);
+    };
+
 	var run = function(){
 	};
 
@@ -98,6 +106,8 @@ define([
 		resize : resize,
 		refreshControl : refreshControl,
 		increaseVolume : increaseVolume,
-		decreaseVolume : decreaseVolume 
+		decreaseVolume : decreaseVolume,
+		clearPlaylist : clearPlaylist,
+		toggleLanguage : toggleLanguage
 	};
 });

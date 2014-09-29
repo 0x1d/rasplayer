@@ -104,6 +104,10 @@ var Rasplayer = function(){
     }
   };
 
+  this.forward = function(){
+    this.next(function(){}, true);
+  };
+
   this.back = function(callback, manual){
     if(currentTrack > 0){
       currentTrack--;
@@ -111,6 +115,18 @@ var Rasplayer = function(){
         this.play(currentPlaylist[currentTrack].path, callback, manual);
       }
     }
+  };
+
+  this.backward = function(){
+      this.back(function(){}, true);
+  };
+
+  this['Fast forward'] = function(){
+    omx.seekForward();
+  };
+
+  this.rewind = function(){
+    omx.seekBackward();
   };
 
   this.getCurrentPlaylist = function(){
@@ -151,6 +167,14 @@ var Rasplayer = function(){
 
   this.decreaseVolume = function(){
     omx.decreaseVolume();
+  };
+
+  this.toggleLanguage = function(){
+    omx.nextAudioStream();
+  };
+
+  this.clearPlaylist = function(){
+    currentPlaylist = [];
   };
 
   // private methods

@@ -53,6 +53,14 @@ define([
 		$.getJSON(config.service.decreaseVolume, callback);
 	};
 
+	var toggleLanguage = function(callback){
+		$.getJSON(config.service.toggleLanguage, callback);
+	};
+
+	var clearPlaylist = function(callback){
+		$.getJSON(config.service.clearPlaylist, callback);
+	};
+
 	return {
 		play : play,
 		stop : stop,
@@ -64,6 +72,8 @@ define([
 		back : back,
 		currentTrack : currentTrack,
 		increaseVolume : increaseVolume,
-		decreaseVolume : decreaseVolume
+		decreaseVolume : decreaseVolume,
+		clearPlaylist : clearPlaylist,
+		toggleLanguage : toggleLanguage
 	};
 });

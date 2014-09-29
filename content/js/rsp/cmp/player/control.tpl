@@ -15,5 +15,7 @@
 	<ul class="button-group">
 	  <li><a href="#" class="small button rsp-control volume-down">&nbsp;</a></li>
 	  <li><a href="#" class="small button rsp-control volume-up">&nbsp;</a></li>
+	  <li><a href="#" class="small button rsp-control language">&nbsp;</a></li>
+	  <li><a href="#" class="small button rsp-control clear">&nbsp;</a></li>
 	</ul>
 </div>
