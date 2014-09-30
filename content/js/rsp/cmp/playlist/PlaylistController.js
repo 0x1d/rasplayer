@@ -13,6 +13,13 @@ define([
 		});
 	};
 
+	var renderPlaylist2 = function(callback){
+		var evt = this;
+		playerService.getCurrentPlaylist(function(playlist){
+			view.render({ playlist: playlist.reverse() }, evt.trigger ? evt.trigger : callback, '#rsp-library');
+		});
+	};
+
 	var onSwipeLeft = function(){
 		$(document).on('swl', function(){
 			$('.off-canvas-wrap').addClass('move-left');
@@ -49,6 +56,7 @@ define([
 	return {
 		run : run,
 		renderPlaylist : renderPlaylist,
+		renderPlaylist2 : renderPlaylist2,
 		queueItem : queueItem
 	};
 });

@@ -1,7 +1,8 @@
 define([
 	'rsp/cmp/player/PlayerController',
-	'rsp/cmp/playlist/PlaylistController'
-], function(player, playlist){
+	'rsp/cmp/playlist/PlaylistController',
+	'rsp/cmp/library/LibraryView'
+], function(player, playlist, library){
 
 	var rsp = {
 		player : {
@@ -32,7 +33,7 @@ define([
 			},
 			clearPlaylist : {
 				handler : player.clearPlaylist,
-				trigger :  [ player.refreshControl, playlist.renderPlaylist ]
+				trigger :  [ player.refreshControl, playlist.renderPlaylist, playlist.renderPlaylist2 ]
 			},
 			toggleLanguage : {
 				handler : player.toggleLanguage
@@ -44,6 +45,10 @@ define([
 			},
 			show : {
 				handler : playlist.renderPlaylist,
+				trigger : [ player.refreshControl, player.resize ]
+			},
+			show2 : {
+				handler : playlist.renderPlaylist2,
 				trigger : [ player.refreshControl, player.resize ]
 			},
 			item : {
@@ -63,10 +68,15 @@ define([
 					handler : player.playTrack,
 					trigger : [ player.resize ]
 				}
+			},
+			show : {
+				handler : library.show
 			}
 		},
 		view : {
-			resize : player.resize
+			resize : {
+				handler : player.resize
+			}
 		}
 	};
 
@@ -98,6 +108,12 @@ define([
 			'#rsp-menu-playlist' : {
 				click : {
 					'.rsp-playlist-toggle' : rsp.playlist.show
+				}
+			},
+			'.menubar' : {
+				click : {
+					'.rsp-show-playlist' : rsp.playlist.show2,
+					'.rsp-show-library' : rsp.library.show
 				}
 			}/*,
 			'body' : {

@@ -1,0 +1,190 @@
+/* css released under Creative Commons License -  http://creativecommons.org/licenses/by/2.0/deed.en  */
+/* html5 + CSS 3 Template created by miss monorom  http://intensivstation.ch 2013 */
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* render html5 elements as block 
+   rendert html5 elemente als block  */
+
+header, footer, section, aside, nav, article { display: block;}
+
+body {
+    background-color: #eee;
+    /*font-size: 0.95em;*/
+    font-family: Arial, SunSans-Regular, Sans-Serif;
+    color:#564b47;
+}
+
+a {color: #ff6677;}
+a:visited {color:#ff6677;}
+a:hover {color: #564b47;}
+a:active { color:#000000;}
+
+h1, h2 {
+    font-size:1.8em;
+    font-weight: normal;
+    margin: 0 0 20px;
+}
+
+img.download {vertical-align:middle;}
+img{border:none;}
+
+p, pre{
+    padding:  0 0 20px;
+    line-height:1.5em;
+}
+	
+/* ---------- header, content, footer width -------------- */
+.inner{
+    background: #629BFF;
+    /*margin: 0 auto;
+    padding: 5px;*/
+    /* max-width: 1000px; 
+    min-width: 700px;*/
+}
+
+/* ----------header -------------- */
+header {
+	width: 100%; 
+	position: fixed;
+	left: 0;
+	top: 0;
+	border-bottom:1px solid #666;
+	border-top:1px solid #666;
+}
+
+.menu-position {
+    background-color: #629BFF; /*#eee;*/
+    border-bottom: 1px solid black;
+    /*margin-left: 20px;
+    margin-right: 20px; */
+}
+
+.menuitem-container {
+    width: 111px;
+}
+
+.menuitem {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin-left:5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-color: transparent;
+}
+
+.menuitem:hover {
+     -webkit-filter: invert(100%);  
+}
+
+.icon-lists {
+    background-image: url(../img/lists.png);
+}
+
+.icon-folder {
+    background-image: url(../img/folder.png);
+}
+
+
+/* ----------------- content--------------------- */
+
+section#rsp-library {
+    background-color: #fff;
+    /* max-width: 1000px; */
+    /* min-width: 700px; */
+    margin: 0 auto;
+    /*padding: 20px;*/
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 75px;
+    margin-bottom: 125px;
+    border: 1px solid black;
+}
+
+/* -----------footer--------------------------- */
+
+footer {
+	background: #629BFF;
+	width: 100%; 
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	border-bottom:1px solid #666;
+	border-top:1px solid #666;
+}
+
+#rsp-player-control {
+    width: 480px;
+}
+
+.player-control {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.rsp-track-info {
+    margin-top: 0px;   
+}
+
+/* -----------utils--------------------------- */
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid black;
+    margin-left:484px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button, .button {
+    background-color: #629BFF;
+    transition: inital;
+    position: inherit;
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+    background-color: transparent;
+    -webkit-filter: invert(100%);  
+    color: white;
+}
+
+.button-group > li > button, .button-group > li .button {
+    border: 0;
+}
+#rsp-library a {
+font-size: 1em;
+}
+
+table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, table tbody tr td, table tr td {
+    line-height: 1em;
+}
+
+.player-control {
+    float: left;
+    margin-left: 0px;
+}
+
+.rsp-track-info {
+    margin-top: 5px;
+}
+
+.rsp-track-info span {
+    display: inline;
+}
+
+ul.off-canvas-list li a {
+    color: #ff6677;
+}
