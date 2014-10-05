@@ -6,7 +6,7 @@ define([
 		sui.render({
 			template: template, 
 			data: data, 
-			target: target ? target : '#rsp-playlist',
+			target: target ? target : '#content',
 			callback: callback
 		});
 	};

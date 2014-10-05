@@ -6,36 +6,23 @@ define([
     'rsp/cmp/toast/Toast'
 ], function($, mediator, view, playerService, toast) {
 
+	var playlistRefresh;
+	var showPlaylist = false;
+
 	var renderPlaylist = function(callback){
 		var evt = this;
 		playerService.getCurrentPlaylist(function(playlist){
-			view.render({ playlist: playlist.reverse() }, evt.trigger ? evt.trigger : callback);
+			view.render({ playlist: playlist.reverse() }, null, '#content');
 		});
-	};
 
-	var renderPlaylist2 = function(callback){
-		var evt = this;
-		playerService.getCurrentPlaylist(function(playlist){
-			view.render({ playlist: playlist.reverse() }, evt.trigger ? evt.trigger : callback, '#rsp-library');
-		});
-	};
-
-	var onSwipeLeft = function(){
-		$(document).on('swl', function(){
-			$('.off-canvas-wrap').addClass('move-left');
-			renderPlaylist();
-		});
-	};
- 
-	var onSwipeRight = function(){
-		$(document).on('swr', function(){
-			$('.off-canvas-wrap').removeClass('move-left');
-		});
 	};
 
 	var queueItem = function(item){
-        toast.notify($(item).parent().find('a').text(),{
-            top: item.offsetTop - 15
+        var context = this;
+		var element = $(item);
+        toast.notify(element.parent().find('a').text(),{
+            top: element.position().top - 10,
+            'margin-right': '10px'
         });
 		playerService.queue(item.getAttribute('data-href'), this.trigger);
 	};
@@ -45,18 +32,30 @@ define([
 		this.trigger();
 	};
 
-	var bindEvents = function(){
-		onSwipeRight();
-		onSwipeLeft();
-	};
 	var run = function(data){
-		bindEvents();
-		renderPlaylist();
+		mediator.on('rsp.ui.playlist.stopRefresh', function(){
+			clearInterval(playlistRefresh)
+		});
+		mediator.on('rsp.ui.playlist.refresh', function(){
+			playlistRefresh = setInterval(function(){
+				renderPlaylist();
+			}, 2500);
+		});
+		
 	};
+
+	var show = function(){
+		renderPlaylist();
+		mediator.trigger('rsp.ui.playlist.refresh');
+		mediator.trigger('rsp.ui.state.change', {
+			state : 'content.playlist'
+		});
+	};
+
 	return {
+		show : show,
 		run : run,
 		renderPlaylist : renderPlaylist,
-		renderPlaylist2 : renderPlaylist2,
 		queueItem : queueItem
 	};
 });

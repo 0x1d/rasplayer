@@ -9,8 +9,7 @@ define([
 			folder.parent = path;
 			view.render(folder, function(){
                 window.scrollTo(0,0);
-                $('.rsp-item-queue[data-isfolder="true"]:first').hide();
-				//mediator.trigger('rsp.resize');
+                //$('.rsp-item-queue[data-isfolder="true"]:first').hide();
 				if(callback){
 					callback();
 				}
@@ -18,7 +17,16 @@ define([
 		});
 	};
 
+	var show = function(){
+		mediator.trigger('rsp.ui.state.change', {
+			state : 'content.library'
+		});
+		mediator.trigger('rsp.ui.playlist.stopRefresh');
+		view.show();
+	};
+
     return {
-		update : update
+		update : update,
+		show : show
 	};
 });

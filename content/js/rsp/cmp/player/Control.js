@@ -3,9 +3,7 @@ define([
 	'rsp/cmp/player/PlayerController'
 ], function(view, ctrl) {
 	var run = function(){
-		view.render({}, function(){
-			ctrl.run();
-		});
+		ctrl.run();
 	};
 	return {
 		run : run

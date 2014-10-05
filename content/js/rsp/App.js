@@ -1,5 +1,5 @@
 define([
-	'foundation',
+	'jquery',
 	'sui/mediator',
 	'sui/sui',
 	'rsp/cmp/player/Control',
@@ -9,16 +9,17 @@ define([
 ], function($, mediator, sui, Control, Playlist, Library, eventModel) {
 
 	var Rasplayer = function(){
-
+		var uiState = '';
 		$(document).ready(function(){
-			sui.swipe.init();
 			Control.run();
 			Playlist.run();
 			Library.run();
-
 			mediator.applyModel(eventModel);
+			
+			mediator.on('rsp.ui.state.change', function(newState){
+				uiState = newState;
+			});
 
-			$(document).foundation();
 			$('body').show();
 		});
 	};

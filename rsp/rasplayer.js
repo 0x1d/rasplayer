@@ -1,5 +1,5 @@
 var fs = require('fs');
-var id3 = require('id3js');
+//var id3 = require('id3js');
 var child_process = require('child_process');
 var exec = child_process.exec;
 
@@ -9,7 +9,7 @@ var Rasplayer = function(){
   var rasplayer = this;
   var omx = require('omx-manager');
   var currentPlaylist = [];
-  var currentTrack = -1;
+  var currentTrack = 0;
   var currentTrackTag = {};
   var manualStop = false;
 
@@ -28,26 +28,28 @@ var Rasplayer = function(){
     omx.play(file);
     var whatsPlaying;
     // parse id3tag
-    if(tagsCallback && file.indexOf('mp3') > -1){
+    /*if(tagsCallback && file.indexOf('mp3') > -1){
         id3({ file: file, type: id3.OPEN_LOCAL }, function(err, id3tag) {
             var tag = parseTag(id3tag);
             currentTrackTag = tag;
-            tagsCallback(tag);
-            whatsPlaying = tag.artist + ' ' + tag.title;
+            whatsPlaying = tag.artist + ' - ' + tag.title;
+            currentTrackTag.displayText = whatsPlaying;
+            tagsCallback(currentTrackTag);
             ctx.event.emit('rsp.play', whatsPlaying); 
         });
-    } else if(tagsCallback) {
+    } else if(tagsCallback) {*/
         var filename = parseFilename(file);
-        tagsCallback(filename);
         whatsPlaying = filename;
+        currentTrackTag = { displayText : whatsPlaying };
+        tagsCallback(filename);
         ctx.event.emit('rsp.play', whatsPlaying); 
-    }
+    //}
   };
 
   this.queue = function(file){
     var player = this;
     try{
-        if(file.indexOf('.mp3') > -1) {
+        /*if(file.indexOf('.mp3') > -1) {
           id3({ file: file, type: id3.OPEN_LOCAL }, function(err, tags) {
               var trackId = currentPlaylist.length;
               var trackName = tags.artist + ' - ' + tags.title;
@@ -56,12 +58,9 @@ var Rasplayer = function(){
                 name : trackName,
                 path: file
               });
-              if(!omx.isPlaying()){
-                currentTrack = currentPlaylist.length - 1;
-                player.play(file, function(){});
-              }
-            });
-        } else {
+              playAsFirstInQueue(file);
+          });
+        } else {*/
             var filename = parseFilename(file);
             var trackId = currentPlaylist.length;
             currentPlaylist.push({
@@ -69,9 +68,17 @@ var Rasplayer = function(){
                 name : filename,
                 path: file
             });
-        }
+            playAsFirstInQueue(file);
+        //}
     } catch(error) {
       console.log('error while queue file ' + error);
+    }
+  };
+
+  var playAsFirstInQueue = function(file){
+    if(!omx.isPlaying()){
+      currentTrack = currentPlaylist.length - 1;
+      rasplayer.play(file, function(){});
     }
   };
 
@@ -81,6 +88,7 @@ var Rasplayer = function(){
   };
 
   this.stop = function(){
+    currentTrackTag = { displayText : '' };
     manualStop = true;
     omx.stop();
     // hack for unterminated child processes
@@ -101,7 +109,7 @@ var Rasplayer = function(){
       if(currentPlaylist[currentTrack]){
         this.play(currentPlaylist[currentTrack].path, callback, manual);
       }
-    }
+    } 
   };
 
   this.forward = function(){
@@ -142,7 +150,7 @@ var Rasplayer = function(){
   };
 
   this.getCurrentTrackTag = function(){
-    return currentTrackTag || {};
+    return currentTrackTag; //omx.isPlaying() ? currentTrackTag : {};
   };
 
   this.resetCurrentPlaylist = function(){

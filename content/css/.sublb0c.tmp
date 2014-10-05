@@ -99,11 +99,11 @@ header {
 #content {
     background-color: #fff;
     margin: 0 auto;
-    margin-top: 53px;
-    /*margin-left: 20px;
+    margin-left: 20px;
     margin-right: 20px;
+    margin-top: 75px;
     margin-bottom: 100px;
-    border: 1px solid black;*/
+    border: 1px solid black;
 }
 
 /* -----------footer--------------------------- */
@@ -163,16 +163,17 @@ button:hover, button:focus, .button:hover, .button:focus {
 .button-group > li > button, .button-group > li .button {
     border: 0;
 }
+
+table {
+    margin-bottom: 0px
+}
+
 #rsp-library a {
 font-size: 1em;
 }
 
 table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, table tbody tr td, table tr td {
     line-height: 1em;
-}
-
-table {
-    margin-bottom: 0;
 }
 
 .player-control {
@@ -189,7 +190,7 @@ table {
 }
 
 ul.off-canvas-list li a {
-    color: black;
+    color: #ff6677;
 }
 #rsp-playlist li[data-playing="true"] {
     background-color: #629BFF;
@@ -207,14 +208,6 @@ ul.off-canvas-list li a:hover {
     color: black;
 }
 
-.rsp-library-item div {
-    height:100%;
-    width:80%;
-    float:left; 
-    padding:10px;
-    padding-left: 0px;
-}
-
 ul.off-canvas-list li label {
     padding: 0.3rem 0.9375rem;
     color: black; /*#FF0000;*/
@@ -224,8 +217,4 @@ ul.off-canvas-list li label {
     background: #ECECEC;
     border-top: 1px solid #5e5e5e;
     border-bottom: 1px solid #5e5e5e;
-}
-
-a {
-    color: black;
 }

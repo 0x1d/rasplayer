@@ -10,7 +10,7 @@ define([
 		sui.render({
 			template: template, 
 			data: folder, 
-			target: '#rsp-library',
+			target: '#content',
 			callback: function(output){
 				currentView = output;
 				callback(output);
@@ -19,7 +19,7 @@ define([
 	};
 
 	var show = function() {
-		$('#rsp-library').html(currentView);
+		$('#content').html(currentView);
 	};
 
 	return {

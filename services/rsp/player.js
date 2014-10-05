@@ -13,6 +13,7 @@ module.exports = {
         var track = decodeURI(http.data.splat[0]);
         if(http.data.playlist == 'true'){
             ctx.rasplayer.playFromPlaylist(track, function getTags(tag){
+                // TODO remove obsolete code
                 http.reply(service.parseTag(tag));
             });
         } else {

@@ -1,18 +1,18 @@
 define([
 	'rsp/cmp/player/PlayerController',
 	'rsp/cmp/playlist/PlaylistController',
-	'rsp/cmp/library/LibraryView'
+	'rsp/cmp/library/LibraryController'
 ], function(player, playlist, library){
 
 	var rsp = {
 		player : {
 			next : {
 				handler : player.playNext,
-				trigger :  [ player.renderControl, playlist.renderPlaylist ]
+				trigger :  [ player.renderControl ]
 			},
 			back : {
 				handler : player.playLast,
-				trigger :  [ player.renderControl, playlist.renderPlaylist ]
+				trigger :  [ player.renderControl ]
 			},
 			render : {
 				handler : player.renderControl
@@ -33,7 +33,7 @@ define([
 			},
 			clearPlaylist : {
 				handler : player.clearPlaylist,
-				trigger :  [ player.refreshControl, playlist.renderPlaylist, playlist.renderPlaylist2 ]
+				trigger :  [ player.refreshControl ]
 			},
 			toggleLanguage : {
 				handler : player.toggleLanguage
@@ -44,38 +44,27 @@ define([
 				handler : playlist.renderPlaylist
 			},
 			show : {
-				handler : playlist.renderPlaylist,
-				trigger : [ player.refreshControl, player.resize ]
-			},
-			show2 : {
-				handler : playlist.renderPlaylist2,
-				trigger : [ player.refreshControl, player.resize ]
+				handler : playlist.show,
+				trigger : [ player.refreshControl ]
 			},
 			item : {
 				click : {
 					handler : player.playlistItemPlay,
-					trigger : [ player.renderControl, playlist.renderPlaylist ]
+					trigger : [ player.refreshControl, playlist.renderPlaylist ]
 				}
 			}
 		},
 		library : {
 			item : {
 				queue : {
-					handler : playlist.queueItem,
-					trigger : [ player.resize ]
+					handler : playlist.queueItem
 				},
 				click : {
-					handler : player.playTrack,
-					trigger : [ player.resize ]
+					handler : player.playTrack
 				}
 			},
 			show : {
 				handler : library.show
-			}
-		},
-		view : {
-			resize : {
-				handler : player.resize
 			}
 		}
 	};
@@ -94,25 +83,16 @@ define([
 					'.rsp-control.language' : rsp.player.toggleLanguage
 				}
 			},
-			'#rsp-library' : {
+			'#content' : {
 				click : {
 					'.rsp-item-queue' : rsp.library.item.queue,
-					'a' : rsp.library.item.click
-				}
-			},
-			'#rsp-playlist' : {
-				click : {
+					'.rsp-library-item' : rsp.library.item.click,
 					'.rsp-playlist-item' : rsp.playlist.item.click
-				}
-			},
-			'#rsp-menu-playlist' : {
-				click : {
-					'.rsp-playlist-toggle' : rsp.playlist.show
 				}
 			},
 			'.menubar' : {
 				click : {
-					'.rsp-show-playlist' : rsp.playlist.show2,
+					'.rsp-show-playlist' : rsp.playlist.show,
 					'.rsp-show-library' : rsp.library.show
 				}
 			}/*,

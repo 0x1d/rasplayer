@@ -2,14 +2,7 @@ require.config({
 	paths: {
 		'baseUrl': 'js',
 		'jquery': 'vendor/jquery',
-		'mustache': 'vendor/mustache',
-		'foundation' : 'vendor/foundation.min'
-	},
-	shim: {
-		'foundation': {
-            deps: ['jquery'],
-            exports: '$'
-        }
+		'mustache': 'vendor/mustache'
 	}
 });
 

@@ -10,8 +10,9 @@ define([
             }).appendTo('body');
         }
         box.html('<b>Item queued</b><br>' + msg);
-        //box.css({ top : document.body.scrollTop + 50});
-        box.css(position);
+        if(position) {
+            box.css(position);
+        } 
         box.show().delay(1500).fadeOut();
 	};
     

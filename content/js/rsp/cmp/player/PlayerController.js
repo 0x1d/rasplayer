@@ -13,7 +13,9 @@ define([
 			library.update(href, this.trigger);
 		} else {
 			playerService.play(href, playlist, function(id3tag){
-				callback.trigger(id3tag);
+				if(callback && callback.trigger){
+					callback.trigger(id3tag);
+				}
 			});
 		}
 	};
@@ -23,21 +25,14 @@ define([
 		playTrack(item, true, this);
 	};
 
-	var renderControl = function(id3tag){
-		view.render(id3tag);
+	var renderCurrentTrack = function(id3tag){
+		view.renderCurrentTrack(id3tag);
 	};
 
 	var refreshControl = function(){
 		playerService.currentTrack(function(tag){
-			renderControl(tag);
+			renderCurrentTrack(tag);
 		});
-	};
-
-	var resize = function(){
-		var rightHeight = $('#rsp-right').height();
-		var libraryHeight = $('#rsp-library').height();
-		var contentHeight = rightHeight > libraryHeight ? rightHeight : libraryHeight;
-		$('.main-section').css("height", contentHeight);
 	};
 
 	var playNext = function(){
@@ -92,6 +87,10 @@ define([
     };
 
 	var run = function(){
+		view.render();
+		setInterval(function(){
+			refreshControl();
+		}, 2500);
 	};
 
 	return {
@@ -100,10 +99,9 @@ define([
 		playLast : playLast,
 		stop : stop,
 		togglePlay : togglePlay,
-		renderControl : renderControl,
+		renderCurrentTrack : renderCurrentTrack,
 		playTrack : playTrack,
 		playlistItemPlay : playlistItemPlay,
-		resize : resize,
 		refreshControl : refreshControl,
 		increaseVolume : increaseVolume,
 		decreaseVolume : decreaseVolume,

@@ -1,59 +1,43 @@
 <!doctype html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Rasplayer</title>
     <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/main.css" type="text/css"/>
     <script src="js/vendor/modernizr.js"></script>
     <script data-main="js/main.js" src="js/vendor/require.js"></script>
-  </head>
-  <body>
-  
-    <div class="off-canvas-wrap" data-offcanvas data-options="close_on_click:false">
-      <div class="inner-wrap">
-        <nav class="tab-bar">
+</head>
+    
+    <body>
+        <!-- header -->
+        <header>
+            <div class="inner menubar">
+                <div class="menuitem-container center">
+                    <a href="#" class="menuitem icon-folder rsp-show-library"></a>
+                    <a href="#" class="menuitem icon-lists rsp-show-playlist"></a>
+                    <!--a href="#" class="menuitem"></a-->
+                </div>  
+            </div>
+            <!--div class="menu-position">
+                <div class="arrow-up"></div>
+            </div-->
+        </header>
         
-          <section class="left-small">
-            <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-          </section>
+        <!-- content -->
+        <div id="content"></div>
 
-          <section class="middle tab-bar-section">
-            <h1 class="title">Rasplayer</h1>
-          </section>
-
-          <section id="rsp-menu-playlist" class="right-small">
-            <a class="right-off-canvas-toggle menu-icon rsp-playlist-toggle" href="#"><span></span></a>
-          </section>
-        </nav>
-
-        <aside class="left-off-canvas-menu">
-          <ul class="off-canvas-list">
-            <li><label>Rasplayer</label></li>
-            <li><a href="#">Library</a></li>
-            <li><a href="#">Playlists</a></li>
-            <li><a href="#">Web Radio</a></li>
-            <li><a href="#">Settings</a></li>
-          </ul>
-        </aside>
-
-        <aside class="right-off-canvas-menu">
-          <div id="rsp-right">
-            <div id="rsp-player-control"></div>
-            <div id="rsp-playlist"></div>
-          </div>
-
-        </aside>
-
-        <section class="main-section">
-          <div id="rsp-library"></div>
-        </section>
-
-      <a class="exit-off-canvas"></a>
-
-      </div>
-    </div>
-
-  </body>
+        <!-- footer -->
+        <footer>		
+            <div class="inner">
+                <div id="rsp-player-current" class="center"></div>
+                <div id="rsp-player-control" class="center"></div>
+            </div>
+        </footer>
+    
+    </body>
+    
 </html>
