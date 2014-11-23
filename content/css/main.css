@@ -39,7 +39,119 @@ p, pre{
     padding:  0 0 20px;
     line-height:1.5em;
 }
-	
+html, body {
+    height: 100%;
+}
+
+body {
+    display: none;
+}
+.player-control {
+    margin-top: 5px;
+    margin-left: 6px;
+    margin-bottom: 5px;
+}
+.player-control .button-group {
+    margin-right: 0px;
+}
+.player-control .button.small {
+    width: 60px;
+    height: 56px;
+}
+
+.player-control .rsp-control {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50% 50%;
+}
+
+.player-control .rsp-control.back {
+    background-image: url(../img/back.png);
+}
+
+.player-control .rsp-control.stop {
+    background-image: url(../img/stop.png);
+}
+
+.player-control .rsp-control.play {
+    background-image: url(../img/play.png);
+}
+
+.player-control .rsp-control.pause {
+    background-image: url(../img/pause.png);
+}
+
+.player-control .rsp-control.next {
+    background-image: url(../img/forward.png);
+}
+
+.player-control .rsp-control.volume-down {
+    background-image: url(../img/volume-down.png);
+}
+
+.player-control .rsp-control.volume-up {
+    background-image: url(../img/volume-up.png);
+}
+
+.player-control .rsp-control.language {
+    background-image: url(../img/language.png);
+}
+
+.player-control .rsp-control.clear {
+    background-image: url(../img/trash.png);
+}
+
+.rsp-track-info {
+    color: white;
+    margin-left: 25px;
+    margin-right: 25px; 
+    margin-top: 35px;
+}
+
+.rsp-track-info span {
+    display: block;
+}
+
+.rsp-playlist a {
+    font-size: 0.76 em;
+}
+
+#rsp-library a {
+    font-size: 1.2em;
+}
+.rsp-item-queue {
+    margin: 0px;
+    float: right;
+    padding: 5px;
+    margin-top: 6px;
+}
+.rsp-item-queue.folder-true {
+    background-color: #f08a24;
+    border-color: #de770f;
+    display: none;
+}
+/*
+.rsp-item-queue[data-isfolder="true"] {
+    display:none;
+}
+*/
+#rsp-playlist li[data-playing="true"] {
+    background-color: #008cba;
+}
+/*
+.player-control.volume-control {
+    margin-left: 66px;
+}
+*/
+.player-control .button-group li a {
+    margin-bottom: 0px;
+}
+
+.rsp-toast {
+    /*border: 1px solid black;*/
+    position: absolute;
+    right: 90px;
+}
 /* ---------- header, content, footer width -------------- */
 .inner{
     background: #629BFF;
@@ -100,9 +212,9 @@ header {
     background-color: #fff;
     margin: 0 auto;
     margin-top: 53px;
+    margin-bottom: 80px;
     /*margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 100px;
     border: 1px solid black;*/
 }
 

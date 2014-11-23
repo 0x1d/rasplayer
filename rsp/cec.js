@@ -16,7 +16,7 @@ module.exports = function(rasplayer){
 	});
 
 	cec.on('key', function(data) {
-	    //console.log('CEC signal recieved: ' + data.name);
+	    console.log('CEC signal recieved: ' + data.name);
 	    if(rasplayer[data.name]){
 	    	rasplayer[data.name]();
 	    }
