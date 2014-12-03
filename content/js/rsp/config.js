@@ -1,7 +1,7 @@
 define(function() {
 	var config = {
 		music : {
-			path: '/media/ehdd'
+			path: '/media'
 		},
 		service: {
 			play: '/rsp/play',
