@@ -1,6 +1,6 @@
 # Rasplayer  
 
-## Configue  
+## Configuration  
 Music path has to be configured here: /content/js/rsp/config.js
 
 ## Add mount
